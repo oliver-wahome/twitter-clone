@@ -77,3 +77,74 @@
 /* end exploreBtn */
 
 /* end of elements in menuLeft */
+
+.feed {
+    width: 50%;
+}
+
+.menuRight {
+    width: 25%;
+}
+
+.authFooter {
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    color: white;
+    background-color: #1d9bf0;
+}
+
+/* start of elements in authFooter */
+.authFooterLeft {
+    width: 25%;
+    height: 100%;
+}
+
+.authFooterContent {
+    width: 50%;
+}
+.authFooterLargeText {
+    font-size: 26px;
+    line-height: 32px;
+}
+
+.authFooterSmallText {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.authFooterButtons {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authFooterBtn {
+    margin: 0 10px;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.authFooterBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.authFooterSignUp {
+    border: none;
+    color: black;
+    background-color: white;
+}
+
+.authFooterSignUp:hover {
+    background-color: #dbdbdb;
+}
+
+/* end of elements in authFooter */
