@@ -4,3 +4,76 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
+.explore {
+    width: 100%;
+    display: flex;
+}
+
+.menuLeft {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 60px;
+}
+
+/* start of elements in menuLeft */
+
+.twitterIcon {
+    margin: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.35s ease-in-out;
+}
+
+/* start twitterIcon */
+.twitterIcon:hover {
+    background-color: rgba(29, 156, 240, 0.15);
+}
+
+.twitterIcon img {
+    height: 30px;
+    width: 30px;
+}
+/* end twitterIcon */
+
+.menuLeftBtn {
+    margin: 3px 0;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.35s ease-in-out;
+}
+
+/* start exploreBtn */
+.menuLeftBtn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menuLeftBtn img {
+    margin: 0 10px 0 0;
+    height: 25px;
+    width: 25px;
+}
+
+.menuLeftBtn p{
+    margin: 0 0 0 10px;
+}
+
+.menuLeftSettingsText { 
+    font-weight: 400;
+}
+/* end exploreBtn */
+
+/* end of elements in menuLeft */
