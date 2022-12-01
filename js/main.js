@@ -19,7 +19,7 @@ function signUpSubmit(){
     authPromise.then(
         function() {
             console.log("This was a success");
-            document.getElementById("closeBtn").click();
+            document.getElementById("signUpCloseBtn").click();
         },
         function(errorString) {
             console.log(errorString);

@@ -142,12 +142,12 @@
                 </p>
 
                 <div class="signUpBtn googleSignUpBtn">
-                    <img src="https://cdn-icons-png.flaticon.com/128/281/281764.png" alt="google-icon-image" height="35px" width="35px" />
+                    <img src="https://cdn-icons-png.flaticon.com/128/281/281764.png" alt="google-icon-image" />
                     <p>Sign up with Google</p>
                 </div>
 
                 <div class="signUpBtn appleSignUpBtn">
-                    <img src="https://cdn-icons-png.flaticon.com/128/0/747.png" alt="apple-icon-image" height="35px" width="35px" />
+                    <img src="https://cdn-icons-png.flaticon.com/128/0/747.png" alt="apple-icon-image" />
                     <p>Sign up with Apple</p>
                 </div>
 
@@ -207,67 +207,67 @@
             </div>
         </div>
 
-        <!-- SignUp Modal -->
-        <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="signUpModalLabel">Sign Up Form</h1>
-                        <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- bootstrap form -->
-                        <div>
-                            <div class="mb-3">
-                                <label for="signUpFirstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="signUpFirstName" aria-describedby="emailHelp" required />
-                            </div>
-                            <div class="mb-3">
-                                <label for="signUpLastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="signUpLastName" aria-describedby="emailHelp" required />
-                            </div>
-                            <div class="mb-3">
-                                <label for="signUpEmail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" required />
-                            </div>
-                            <div class="mb-3">
-                                <label for="signUpPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="signUpPassword" required />
-                            </div>
-                            <button onclick=signUpSubmit() id="signUpBtn" type="submit" class="btn btn-primary w-100 my-3">Sign Up</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Login Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="loginModalLabel">Login Form</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- bootstrap form -->
-                        <form>
-                            <div class="mb-3">
-                                <label for="loginEmail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required />
-                            </div>
-                            <div class="mb-3">
-                                <label for="loginPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="loginPassword" required />
-                            </div>
-                            <button id="loginBtn" type="submit" class="btn btn-primary w-100 my-3">Login</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </section>
+
+    <!-- SignUp Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signUpModalLabel">Sign Up Form</h1>
+                    <button id="signUpCloseBtn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- bootstrap form -->
+                    <div>
+                        <div class="mb-3">
+                            <label for="signUpFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="signUpFirstName" aria-describedby="emailHelp" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="signUpLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="signUpLastName" aria-describedby="emailHelp" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="signUpEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="signUpPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword" required />
+                        </div>
+                        <button onclick=signUpSubmit() id="signUpBtn" type="submit" class="btn btn-primary w-100 my-3">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Login Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- bootstrap form -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required />
+                        </div>
+                        <button id="loginBtn" type="submit" class="btn btn-primary w-100 my-3">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>

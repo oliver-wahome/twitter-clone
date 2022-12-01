@@ -104,7 +104,7 @@
     padding: 10px;
     width: 85%;
     background-color: #eff3f4;
-    border-radius: 20px;
+    border-radius: 30px;
     border: 1px solid #eff3f4;
 }
 
@@ -194,13 +194,14 @@
 }
 
 .signUpBtn {
+    width: 90%;
+    padding: 7px 0;
     margin: 10px 0;
-    padding: 10px 0;
-    width: 85%;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 20px;
     border: 1px solid rgb(207, 217, 222);
     cursor: pointer;
@@ -216,18 +217,12 @@
     width: 20px;
 }
 
-.appleSignUpBtn {
-    font-weight: 700;
+.signUpBtn p {
+    margin: 0;
 }
 
-.phoneSignUpBtn {
+.appleSignUpBtn, .phoneSignUpBtn {
     font-weight: 700;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-}
-
-.phoneSignUpBtn p {
-    word-wrap: break-word;
 }
 
 .signUpTextBottom {
@@ -242,6 +237,7 @@
 }
 
 .signUpTextBottom a:hover {
+    color: #1d9bf0;
     text-decoration: underline;
 }
 /* end signUpSection */
@@ -254,6 +250,8 @@
 
 /* start termsOfService */
 .tosLinks {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
@@ -271,6 +269,10 @@
 .tosLinks a{
     color: #536471;
     text-decoration: none;
+}
+
+.tosLinks a:hover {
+    color: #536471;
 }
 
 .tosLinksMore {
