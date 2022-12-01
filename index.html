@@ -9,6 +9,12 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/733/733579.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Bootstrap v5 links -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
     <!-- Linking fontawesome -->
     <script src="https://use.fontawesome.com/e48f2a1172.js"></script>
 </head>
@@ -55,6 +61,8 @@
             <div class="feedContent">
                 <!-- Initial feed image container sub-section -->
                 <div class="feedImageContainer">
+                    <!-- <img class="feedImage" src="https://pbs.twimg.com/semantic_core_img/1593741019094425602/S8onPxiE?format=jpg&name=small" alt="fifa-world-cup-image" /> -->
+
                     <div class="feedImageSmallTitle">
                         <p>Sports</p>
                         <div class="dot"></div>
@@ -189,18 +197,83 @@
 
             <!-- Right authFooter login/signup buttons -->
             <div class="authFooterButtons">
-                <div class="authFooterBtn">
+                <div class="authFooterBtn" data-bs-toggle="modal" data-bs-target="#loginModal">
                     Log in
                 </div>
 
-                <div class="authFooterBtn authFooterSignUp">
+                <div class="authFooterBtn authFooterSignUp" data-bs-toggle="modal" data-bs-target="#signUpModal">
                     Sign up
+                </div>
+            </div>
+        </div>
+
+        <!-- SignUp Modal -->
+        <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="signUpModalLabel">Sign Up Form</h1>
+                        <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- bootstrap form -->
+                        <div>
+                            <div class="mb-3">
+                                <label for="signUpFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="signUpFirstName" aria-describedby="emailHelp" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="signUpLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="signUpLastName" aria-describedby="emailHelp" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="signUpEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="signUpPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signUpPassword" required />
+                            </div>
+                            <button onclick=signUpSubmit() id="signUpBtn" type="submit" class="btn btn-primary w-100 my-3">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="loginModalLabel">Login Form</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- bootstrap form -->
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" required />
+                            </div>
+                            <button id="loginBtn" type="submit" class="btn btn-primary w-100 my-3">Login</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
     </section>
 
-    <script src="main.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

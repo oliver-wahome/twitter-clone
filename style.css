@@ -85,7 +85,7 @@
     border-right: 1px solid rgb(0, 0, 0, 0.25);
 }
 
-/* start elements in feed */
+/* start of elements in feed */
 
 .navbar {
     padding: 5px 0;
@@ -157,7 +157,15 @@
 }
 /* end navbar */
 
-/* end elements in feed */
+.feedImageContainer {
+    height: 340px;
+    width: 100%;
+    position: relative;
+    background-image: url("https://pbs.twimg.com/semantic_core_img/1593741019094425602/S8onPxiE?format=jpg&name=small");
+    background-size: cover;
+}
+
+/* end of elements in feed */
 
 
 .menuRight {
