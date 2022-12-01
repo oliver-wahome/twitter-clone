@@ -11,7 +11,8 @@
 }
 
 .menuLeft {
-    width: 25%;
+    position: relative;
+    width: 23%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -48,7 +49,6 @@
     padding: 12px 16px;
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -79,13 +79,209 @@
 /* end of elements in menuLeft */
 
 .feed {
-    width: 50%;
+    height: 200vh;
+    width: 45%;
+    border-left: 1px solid rgb(0, 0, 0, 0.25);
+    border-right: 1px solid rgb(0, 0, 0, 0.25);
 }
+
+/* start elements in feed */
+
+.navbar {
+    padding: 5px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* start navbar */
+.searchBar {
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 85%;
+    background-color: #eff3f4;
+    border-radius: 20px;
+    border: 1px solid #eff3f4;
+}
+
+/* start searchBar */
+.searchBar:focus, .searchBar:active {
+    background-color: transparent;
+    border: 1px solid #1d9bf0;
+}
+
+.searchBar:active .searchIcon, .searchBar:focus .searchIcon{
+    color: #1d9bf0;
+}
+
+.searchIcon {
+    color: grey;
+    font-size: 18px;
+    font-weight: 200;
+    margin: 0 20px 0 15px;
+}
+
+#searchInput {
+    width: 90%;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+/* end searchBar */
+
+.navbarSettingsBtn {
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.navbarSettingsBtn:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+.navbarSettingsBtn img{
+    height: 20px;
+    width: 20px;
+}
+/* end navbar */
+
+/* end elements in feed */
+
 
 .menuRight {
-    width: 25%;
+    width: 32%;
+    padding: 10px 50px 10px 30px;
 }
 
+/* start of elements in menuRight */
+.signUpSection {
+    padding: 15px;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+/* start signUpSection */
+.signUpTitle {
+    margin: 0 5px 5px 5px;
+    font-size: 20px;
+    color: #0f1419;
+}
+
+.signUpTextTop {
+    margin: 10px 0;
+    font-size: 13px;
+    color: #536471;
+}
+
+.signUpBtn {
+    margin: 10px 0;
+    padding: 10px 0;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid rgb(207, 217, 222);
+    cursor: pointer;
+}
+
+.signUpBtn:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.signUpBtn img {
+    margin: 0 10px;
+    height: 20px;
+    width: 20px;
+}
+
+.appleSignUpBtn {
+    font-weight: 700;
+}
+
+.phoneSignUpBtn {
+    font-weight: 700;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.phoneSignUpBtn p {
+    word-wrap: break-word;
+}
+
+.signUpTextBottom {
+    margin: 15px 0 5px 0;
+    color: #536471;
+    font-size: 13px;
+}
+
+.signUpTextBottom a{
+    text-decoration: none;
+    color: #1d9bf0;
+}
+
+.signUpTextBottom a:hover {
+    text-decoration: underline;
+}
+/* end signUpSection */
+
+.termsOfService {
+    margin: 15px;
+    font-size: 13px;
+    color: #536471;
+}
+
+/* start termsOfService */
+.tosLinks {
+    list-style-type: none;
+}
+
+.tosLinks li {
+    line-height: 20px;
+    display: inline;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+}
+
+.tosLinks li:hover {
+    text-decoration: underline;
+}
+
+.tosLinks a{
+    color: #536471;
+    text-decoration: none;
+}
+
+.tosLinksMore {
+    display: flex;
+    align-items: flex-end;
+}
+
+.tosLinksMoreIcon {
+    height: 10px;
+    width: 12px;
+}
+/* end termsOfService */
+
+.termsOfService p{
+    margin: 3px 0;
+}
+/* end of elements in menuRight */
+
+/* fixed blue authentication footer */
 .authFooter {
     padding: 10px 0;
     position: fixed;
@@ -99,13 +295,14 @@
 
 /* start of elements in authFooter */
 .authFooterLeft {
-    width: 25%;
+    width: 23%;
     height: 100%;
 }
 
 .authFooterContent {
-    width: 50%;
+    width: 45%; 
 }
+
 .authFooterLargeText {
     font-size: 26px;
     line-height: 32px;
@@ -117,10 +314,11 @@
 }
 
 .authFooterButtons {
-    width: 25%;
+    width: 32%;
+    padding: 0 50px 0 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .authFooterBtn {

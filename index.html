@@ -8,6 +8,9 @@
 
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/733/733579.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Linking fontawesome -->
+    <script src="https://use.fontawesome.com/e48f2a1172.js"></script>
 </head>
 <body>
     <!-- Twitter desktop explore page -->
@@ -35,12 +38,17 @@
             <!-- Feed's navigation bar with search input and settings button -->
             <div class="navbar">
                 <div class="searchBar">
-                    <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search-icon-image" height="30px" width="30px" />
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search-icon-image" height="30px" width="30px" /> -->
+                    <span class="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
 
                     <input id="searchInput" placeholder="Search Twitter" type="text" />
                 </div>
 
-                <img src="https://cdn-icons-png.flaticon.com/128/2099/2099058.png" alt="settings-icon-image" height="30px" width="30px" />
+                
+
+                <div class="navbarSettingsBtn">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2099/2099058.png" alt="settings-icon-image" />
+                </div>
             </div>
 
             <!-- Twitter feed content section -->
@@ -125,39 +133,39 @@
                     Sign up now to get your own personalized timeline!
                 </p>
 
-                <div class="googleSignUpBtn">
+                <div class="signUpBtn googleSignUpBtn">
                     <img src="https://cdn-icons-png.flaticon.com/128/281/281764.png" alt="google-icon-image" height="35px" width="35px" />
                     <p>Sign up with Google</p>
                 </div>
 
-                <div class="appleSignUpBtn">
+                <div class="signUpBtn appleSignUpBtn">
                     <img src="https://cdn-icons-png.flaticon.com/128/0/747.png" alt="apple-icon-image" height="35px" width="35px" />
                     <p>Sign up with Apple</p>
                 </div>
 
-                <div class="phoneSignUpBtn">
+                <div class="signUpBtn phoneSignUpBtn">
                     <p>Sign up with a phone number or email</p>
                 </div>
 
                 <p class="signUpTextBottom">
-                    By signing up, you agree to the <span>Terms of Service</span> and
-                    <span>Privacy Policy</span>, including <span>Cookie Use.</span>
+                    By signing up, you agree to the <a href="#">Terms of Service</a> and
+                    <a href="#">Privacy Policy</a>, including <a href="#">Cookie Use.</a>
                 </p>
             </div>
 
             <!-- Terms of service links and copyright text sub-section (below signup container) -->
             <div class="termsOfService">
-                <div class="tosLinks">
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Cookie Policy</a>
-                    <a href="#">Accessibility</a>
-                    <a href="#">Ads info</a>
-                    <div>
-                        <p>More</p>
-                        <img src="" alt="more-icon-image" height="20px" width="20px" />
-                    </div>
-                </div>
+                <ul class="tosLinks">
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Ads info</a></li>
+                    <li class="tosLinksMore">
+                        More
+                        <img class="tosLinksMoreIcon" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+                    </li>
+                </ul>
                 <p>&copy; 2022 Twitter, Inc.</p>
             </div>
         </div>
@@ -168,7 +176,7 @@
             <div class="authFooterLeft">
 
             </div>
-            
+
             <!-- Central authFooter content -->
             <div class="authFooterContent">
                 <h4 class="authFooterLargeText">
