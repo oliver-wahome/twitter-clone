@@ -314,11 +314,13 @@
 }
 
 .authFooterLargeText {
+    margin: 0;
     font-size: 26px;
     line-height: 32px;
 }
 
 .authFooterSmallText {
+    margin: 0;
     font-size: 14px;
     line-height: 24px;
 }
