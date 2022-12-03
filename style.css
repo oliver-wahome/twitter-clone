@@ -163,7 +163,7 @@
     height: 340px;
     width: 100%;
     position: relative;
-    background-image: url("https://pbs.twimg.com/semantic_core_img/1593741019094425602/S8onPxiE?format=jpg&name=small");
+    background-image: linear-gradient(transparent, black), url("https://pbs.twimg.com/semantic_core_img/1593741019094425602/S8onPxiE?format=jpg&name=small");
     background-size: cover;
     color: white;
 }
@@ -192,15 +192,13 @@
     position: absolute;
     margin: 0;
     font-size: 23px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 28px;
     bottom: 12px;
 }
 /* end feedImageContainer */
 
 /* end of elements in feed */
-
-
 .menuRight {
     width: 32%;
     padding: 10px 50px 10px 30px;
