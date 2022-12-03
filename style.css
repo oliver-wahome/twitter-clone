@@ -10,6 +10,9 @@
     display: flex;
 }
 
+/* 
+    LEFT MENU
+*/
 .menuLeft {
     position: relative;
     width: 23%;
@@ -78,6 +81,9 @@
 
 /* end of elements in menuLeft */
 
+/* 
+    MIDDLE TWITTER FEED
+*/
 .feed {
     height: 200vh;
     width: 45%;
@@ -198,7 +204,82 @@
 }
 /* end feedImageContainer */
 
+.trends {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.25);
+}
+
+/* start of elements in trends */
+.trends p, .trends h3 {
+    margin: 0;
+    /* padding: 0; */
+}
+
+.trendsTitle {
+    color: #0f1419;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 16px;
+}
+
+.trendsRow {
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+/* start trendsRow */
+.trendsRow:hover {
+    background-color: rgb(0, 0, 0, 0.03);
+}
+
+.trendsLightText {
+    font-size: 13px;
+    color: #536471;
+}
+
+.trendsDarkText {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f1419;
+}
+
+.trendsMoreBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.trendsMoreBtn:hover {
+    background-color: rgba(29, 156, 240, 0.15);
+}
+
+.trendsMoreBtn img {
+    height: 15px;
+    width: 15px;
+}
+
+.showTrendsRow {
+    padding: 16px;
+    color: #1d9bf0;
+    font-size: 15px;
+}
+/* end trendsRow */
+
+/* end of elements in trends */
+
 /* end of elements in feed */
+
+/* 
+    RIGHT MENU 
+*/
 .menuRight {
     width: 32%;
     padding: 10px 50px 10px 30px;
@@ -328,7 +409,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 12vh;
+    height: 10vh;
     display: flex;
     color: white;
     background-color: #1d9bf0;
@@ -346,14 +427,14 @@
 
 .authFooterLargeText {
     margin: 0;
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 23px;
+    line-height: 30px;
 }
 
 .authFooterSmallText {
     margin: 0;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 20px;
 }
 
 .authFooterButtons {
@@ -366,8 +447,9 @@
 
 .authFooterBtn {
     margin: 0 10px;
-    padding: 10px 16px;
+    padding: 8px 16px;
     border-radius: 30px;
+    font-size: 15px;
     font-weight: 700;
     border: 1px solid rgba(255, 255, 255, 0.6);
     transition: 0.4s ease-in-out;
