@@ -231,6 +231,8 @@
                             <label for="signUpPassword" class="form-label">Password</label>
                             <input type="password" class="form-control" id="signUpPassword" required />
                         </div>
+                        <!-- Alert Div -->
+                        <div id="alertSignUp" class="alert alert-danger alertDiv" role="alert"></div>
                         <button onclick=signUpSubmit() id="signUpBtn" type="submit" class="btn btn-primary w-100 my-3">Sign Up</button>
                     </div>
                 </div>
@@ -257,7 +259,9 @@
                             <label for="loginPassword" class="form-label">Password</label>
                             <input type="password" class="form-control" id="loginPassword" required />
                         </div>
-                        <button id="loginBtn" type="submit" class="btn btn-primary w-100 my-3">Login</button>
+                        <!-- Alert Div -->
+                        <div id="alertLogin" class="alert alert-danger alertDiv" role="alert"></div>
+                        <button onclick=loginSubmit() id="loginBtn" type="submit" class="btn btn-primary w-100 my-3">Login</button>
                     </form>
                 </div>
             </div>

@@ -7,25 +7,19 @@ function signUpSubmit(){
 
     console.log(email +" "+ password);
 
-    //Implementing javascript promise to complete firebase auth before closeBtn.click()
-    let authPromise = new Promise(function(myResolve, myReject){
-        try {
-            firebase.auth().createUserWithEmailAndPassword(email, password);
-            myResolve();
-        } catch (error){
-            myReject(error.message);
-        }
-    });
+    //Implementing javascript promise to catch errors while authenticating on firebase
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userInfo) =>{
+            //This is where the code to redirect users to logged in twitter will be.
+            console.log("user registered");
 
-    authPromise.then(
-        function() {
-            console.log("This was a success");
-            document.getElementById("signUpCloseBtn").click();
-        },
-        function(errorString) {
-            console.log(errorString);
-        }
-    );
+            window.location.href = "home.html";
+
+        }).catch((error) => {
+            console.log(error.message);
+            document.getElementById("alertSignUp").style.display = "block";
+            document.getElementById("alertSignUp").innerText = error.message;
+        });
 }
 
 /* 
@@ -35,6 +29,20 @@ function signUpSubmit(){
 function loginSubmit(){
     var email = document.getElementById("loginEmail").value;
     var password = document.getElementById("loginPassword").value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userInfo) => {
+            //Logged In
+
+            console.log("user logged in");
+
+            window.location.href = "home.html";
+        })
+        .catch((error) => {
+            console.log(error.message);
+            document.getElementById("alertLogin").style.display = "block";
+            document.getElementById("alertLogin").innerText = error.message;
+        });
 
     console.log(email + " " + password);
 }
