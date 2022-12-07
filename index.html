@@ -209,7 +209,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="signUpModalLabel">Sign Up Form</h1>
+                    <h1 class="modal-title fs-5" id="signUpModalLabel">Join Twitter today</h1>
                     <button id="signUpCloseBtn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -233,8 +233,18 @@
                         </div>
                         <!-- Alert Div -->
                         <div id="alertSignUp" class="alert alert-danger alertDiv" role="alert"></div>
+
+                        <!-- Loading button from bootstrap -->
+                        <button id="signUpSpinnerBtn" class="btn btn-primary w-100 my-3" style="display:none;" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
+
                         <button onclick=signUpSubmit() id="signUpBtn" type="submit" class="btn btn-primary w-100 my-3">Sign Up</button>
+
                     </div>
+
+                    <div class="accountText">Have an account already? <span data-bs-toggle="modal" data-bs-target="#loginModal">Log in</span></div>
                 </div>
             </div>
         </div>
@@ -245,12 +255,12 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="loginModalLabel">Login Form</h1>
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Sign in to Twitter</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- bootstrap form -->
-                    <form>
+                    <div>
                         <div class="mb-3">
                             <label for="loginEmail" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required />
@@ -261,16 +271,59 @@
                         </div>
                         <!-- Alert Div -->
                         <div id="alertLogin" class="alert alert-danger alertDiv" role="alert"></div>
+                        
+                        <!-- Loading button from bootstrap -->
+                        <button id="loginSpinnerBtn" class="btn btn-primary w-100 my-3" type="button" style="display:none;" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
+
                         <button onclick=loginSubmit() id="loginBtn" type="submit" class="btn btn-primary w-100 my-3">Login</button>
-                    </form>
+
+                        <button id="forgotPassBtn" type="submit" class="btn btn-dark w-100 my-2" data-bs-toggle="modal" data-bs-target="#resetPassModal">Forgot password?</button>
+                    </div>
+
+                    <p class="accountText">Don't have an account? <span data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</span></p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Login Modal -->
+    <div class="modal fade" id="resetPassModal" tabindex="-1" aria-labelledby="resetPassModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="resetPassModalLabel">Reset Your Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- bootstrap form -->
+                    <div>
+                        <div class="mb-3">
+                            <label for="resetPassEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="resetPassEmail" aria-describedby="emailHelp" required />
+                        </div>
+
+                        <!-- Alert Div -->
+                        <div id="alertResetPass" class="alert alert-success alertDiv" role="alert"></div>
+
+                        <button id="resetBtn" type="submit" class="btn btn-primary w-100 my-3">Send Reset Link</button>
+
+                    </div>
+
+                    <p class="accountText">Back to <span data-bs-toggle="modal" data-bs-target="#loginModal">Log in</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
     <script src="js/config.js"></script>
     <script src="js/main.js"></script>

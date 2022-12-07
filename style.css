@@ -413,6 +413,26 @@
 .alertDiv {
     display: none;
 }
+
+.spinnerBtn {
+    width: 100%;
+    display: none;
+}
+
+.accountText {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.accountText span {
+    color: #1d9bf0;
+    cursor: pointer;
+}
+
+.accountText span:hover {
+    text-decoration: underline;
+}
 /* end of Modal styles */
 
 /* fixed blue authentication footer */

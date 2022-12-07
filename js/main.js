@@ -1,5 +1,7 @@
 //function to add a users details to firebase authentication
 function signUpSubmit(){
+    document.getElementById("signUpBtn").style.display = "none";
+    document.getElementById("signUpSpinnerBtn").style.display = "block";
     var firstName = document.getElementById("signUpFirstName").value;
     var lastName = document.getElementById("signUpLastName").value;
     var email = document.getElementById("signUpEmail").value;
@@ -10,10 +12,19 @@ function signUpSubmit(){
     //Implementing javascript promise to catch errors while authenticating on firebase
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userInfo) =>{
-            //This is where the code to redirect users to logged in twitter will be.
-            console.log("user registered");
+            var userId = userInfo.user.uid;
+            var timeStamp = new Date();
 
-            window.location.href = "home.html";
+            //This is where the code to redirect users to logged in twitter will be.
+            firebase.firestore().collection("users").doc(userId).set({
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                timeStamp: timeStamp,
+                userId: userId
+            }).then(() => {
+                window.location.href = "home.html"
+            })
 
         }).catch((error) => {
             console.log(error.message);
@@ -27,6 +38,8 @@ function signUpSubmit(){
     database and either logging them in or alertin them to create an account.
 */
 function loginSubmit(){
+    document.getElementById("loginBtn").style.display = "none";
+    document.getElementById("loginSpinnerBtn").style.display = "block";
     var email = document.getElementById("loginEmail").value;
     var password = document.getElementById("loginPassword").value;
 
@@ -40,6 +53,8 @@ function loginSubmit(){
         })
         .catch((error) => {
             console.log(error.message);
+            document.getElementById("loginBtn").style.display = "block";
+            document.getElementById("loginSpinnerBtn").style.display = "none";
             document.getElementById("alertLogin").style.display = "block";
             document.getElementById("alertLogin").innerText = error.message;
         });
