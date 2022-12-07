@@ -56,7 +56,6 @@
     display: flex;
     align-items: flex-end;
     font-size: 20px;
-    font-weight: 700;
     cursor: pointer;
     border-radius: 30px;
     transition: 0.35s ease-in-out;
@@ -77,8 +76,8 @@
     margin: 0 0 0 10px;
 }
 
-.menuLeftSettingsText { 
-    font-weight: 400;
+.menuLeftSettingsTextBold { 
+    font-weight: 700;
 }
 /* end exploreBtn */
 

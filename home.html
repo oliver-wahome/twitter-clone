@@ -43,131 +43,117 @@
             </div>
 
             <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png" alt="home-icon-image"/>
+                <p>Home</p>
+            </div>
+
+            <div class="menuLeftBtn">
                 <img src="https://cdn-icons-png.flaticon.com/128/4510/4510810.png" alt="hashtag-icon-image"/>
                 <p>Explore</p>
             </div>
 
             <div class="menuLeftBtn">
-                <img src="https://cdn-icons-png.flaticon.com/128/2099/2099058.png" alt="settings-icon-image" />
-                <p class="menuLeftSettingsText">Settings</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/3114/3114800.png" alt="notifications-icon-image" />
+                <p>Notifications</p>
             </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/542/542638.png" alt="messages-icon-image" />
+                <p>Messages</p>
+            </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25667.png" alt="bookmarks-icon-image" />
+                <p>Bookmarks</p>
+            </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/839/839860.png" alt="lists-icon-image" />
+                <p>Lists</p>
+            </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/709/709579.png" alt="profile-icon-image" />
+                <p>Profile</p>
+            </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/570/570223.png" alt="more-icon-image" />
+                <p>More</p>
+            </div>
+
         </div>
 
         <!-- Central Page Feed -->
         <div class="feed">
-            <!-- Feed's navigation bar with search input and settings button -->
-            <div class="navbar">
-                <div class="searchBar">
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search-icon-image" height="30px" width="30px" /> -->
-                    <span class="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
-
-                    <input id="searchInput" placeholder="Search Twitter" type="text" />
-                </div>
-
-                <div class="navbarSettingsBtn">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2099/2099058.png" alt="settings-icon-image" />
-                </div>
-            </div>
-
+            
             <!-- Twitter feed content section -->
             <div class="feedContent">
-                <!-- Initial feed image container sub-section -->
-                <div class="feedImageContainer">
-                    <!-- <img class="feedImage" src="https://pbs.twimg.com/semantic_core_img/1593741019094425602/S8onPxiE?format=jpg&name=small" alt="fifa-world-cup-image" /> -->
-
-                    <div class="feedImageSmallTitle">
-                        <p>Sports</p>
-                        <div class="dot"></div>
-                        <p>LIVE</p>
-                    </div>
-
-                    <h3 class="feedImageLargeTitle">2022 FIFA World Cup</h3>
-                </div>
 
                 <!-- Feed trends sub-section -->
-                <div class="trends">
-                    <h3 class="trendsTitle">Trends for you</h3>
 
-                    <!-- trending topic row -->
-                    <div class="trendsRow">
-                        <div class="trendsRowLeft">
-                            <p class="trendsLightText">Trending in Kenya</p>
-                            <p class="trendsDarkText">Lovely</p>
-                            <p class="trendsLightText">229K Tweets</p>
-                        </div>
-                        
-                        <div onmouseover=moreBtnBlue(1) onmouseout=moreBtnGrey(1) class="trendsMoreBtn" >
-                            <img id="moreImage1" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
-                        </div>
-                    </div>
-
-                    <!-- trending topic row -->
-                    <div class="trendsRow">
-                        <div class="trendsRowLeft">
-                            <p class="trendsLightText">Trending in Kenya</p>
-                            <p class="trendsDarkText">Telegram</p>
-                            <p class="trendsLightText">472K Tweets</p>
-                        </div>
-
-                        <div onmouseover=moreBtnBlue(2) onmouseout=moreBtnGrey(2)  class="trendsMoreBtn">
-                            <img id="moreImage2" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
-                        </div>
-                    </div>
-
-                    <!-- trending topic row -->
-                    <div class="trendsRow">
-                        <div class="trendsRowLeft">
-                            <p class="trendsLightText">Trending in Kenya</p>
-                            <p class="trendsDarkText">Freedom</p>
-                            <p class="trendsLightText">384K Tweets</p>
-                        </div>
-
-                        <div onmouseover=moreBtnBlue(3) onmouseout=moreBtnGrey(3) class="trendsMoreBtn">
-                            <img id="moreImage3" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
-                        </div>
-                    </div>
-
-                    <!-- Show more row -->
-                    <div class="trendsRow showTrendsRow">
-                        <p>
-                            Show more
-                        </p>
-                    </div>
-
-                </div>
             </div>
         </div>
 
         <!-- Right Sign up menu section with terms of service -->
         <div class="menuRight">
-            <!-- Sign Up container sub-section -->
-            <div class="signUpSection">
-                <h3 class="signUpTitle">
-                    New to Twitter?
-                </h3>
+            <!-- menuRight searchBar -->
+            <div class="searchBar">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search-icon-image" height="30px" width="30px" /> -->
+                <span class="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
 
-                <p class="signUpTextTop">
-                    Sign up now to get your own personalized timeline!
-                </p>
+                <input id="searchInput" placeholder="Search Twitter" type="text" />
+            </div>
 
-                <div class="signUpBtn googleSignUpBtn">
-                    <img src="https://cdn-icons-png.flaticon.com/128/281/281764.png" alt="google-icon-image" />
-                    <p>Sign up with Google</p>
+            <div class="trends">
+                <h3 class="trendsTitle">Trends for you</h3>
+
+                <!-- trending topic row -->
+                <div class="trendsRow">
+                    <div class="trendsRowLeft">
+                        <p class="trendsLightText">Trending in Kenya</p>
+                        <p class="trendsDarkText">Lovely</p>
+                        <p class="trendsLightText">229K Tweets</p>
+                    </div>
+                    
+                    <div onmouseover=moreBtnBlue(1) onmouseout=moreBtnGrey(1) class="trendsMoreBtn" >
+                        <img id="moreImage1" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+                    </div>
                 </div>
 
-                <div class="signUpBtn appleSignUpBtn">
-                    <img src="https://cdn-icons-png.flaticon.com/128/0/747.png" alt="apple-icon-image" />
-                    <p>Sign up with Apple</p>
+                <!-- trending topic row -->
+                <div class="trendsRow">
+                    <div class="trendsRowLeft">
+                        <p class="trendsLightText">Trending in Kenya</p>
+                        <p class="trendsDarkText">Telegram</p>
+                        <p class="trendsLightText">472K Tweets</p>
+                    </div>
+
+                    <div onmouseover=moreBtnBlue(2) onmouseout=moreBtnGrey(2)  class="trendsMoreBtn">
+                        <img id="moreImage2" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+                    </div>
                 </div>
 
-                <div class="signUpBtn phoneSignUpBtn">
-                    <p>Sign up with a phone number or email</p>
+                <!-- trending topic row -->
+                <div class="trendsRow">
+                    <div class="trendsRowLeft">
+                        <p class="trendsLightText">Trending in Kenya</p>
+                        <p class="trendsDarkText">Freedom</p>
+                        <p class="trendsLightText">384K Tweets</p>
+                    </div>
+
+                    <div onmouseover=moreBtnBlue(3) onmouseout=moreBtnGrey(3) class="trendsMoreBtn">
+                        <img id="moreImage3" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+                    </div>
                 </div>
 
-                <p class="signUpTextBottom">
-                    By signing up, you agree to the <a href="#">Terms of Service</a> and
-                    <a href="#">Privacy Policy</a>, including <a href="#">Cookie Use.</a>
-                </p>
+                <!-- Show more row -->
+                <div class="trendsRow showTrendsRow">
+                    <p>
+                        Show more
+                    </p>
+                </div>
+
             </div>
 
             <!-- Terms of service links and copyright text sub-section (below signup container) -->
@@ -186,7 +172,7 @@
                 <p>&copy; 2022 Twitter, Inc.</p>
             </div>
         </div>
-        
+
     </section>
     
 
