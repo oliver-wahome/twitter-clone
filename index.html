@@ -7,7 +7,7 @@
     <title>Twitter</title>
 
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/733/733579.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
     <!-- Bootstrap v5 links -->
     <!-- CSS only -->
@@ -44,7 +44,6 @@
             <!-- Feed's navigation bar with search input and settings button -->
             <div class="navbar">
                 <div class="searchBar">
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search-icon-image" height="30px" width="30px" /> -->
                     <span class="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
 
                     <input id="searchInput" placeholder="Search Twitter" type="text" />
@@ -289,7 +288,7 @@
         </div>
     </div>
 
-    <!-- Login Modal -->
+    <!-- Reset Password Modal -->
     <div class="modal fade" id="resetPassModal" tabindex="-1" aria-labelledby="resetPassModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -306,9 +305,12 @@
                         </div>
 
                         <!-- Alert Div -->
-                        <div id="alertResetPass" class="alert alert-success alertDiv" role="alert"></div>
+                        <div id="alertSuccessResetPass" class="alert alert-success alertDiv" role="alert"></div>
 
-                        <button id="resetBtn" type="submit" class="btn btn-primary w-100 my-3">Send Reset Link</button>
+                        <!-- Alert Div -->
+                        <div id="alertDangerResetPass" class="alert alert-danger alertDiv" role="alert"></div>
+
+                        <button onclick=resetPassword() id="resetBtn" type="submit" class="btn btn-primary w-100 my-3">Send Reset Link</button>
 
                     </div>
 
@@ -325,7 +327,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-    <script src="js/config.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

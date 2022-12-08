@@ -2,8 +2,6 @@
 firebase.auth().onAuthStateChanged((user) => {
     if(user) {
         //if user is logged in
-        console.log("user is logged in");
-
         //getting the user's id
         var userId = user.uid;
         console.log(userId);
@@ -33,8 +31,6 @@ firebase.auth().onAuthStateChanged((user) => {
 
     }else {
         //else if user is not logged in
-        console.log("user isn't logged in");
-
         window.location.href = "index.html";
     }
 })

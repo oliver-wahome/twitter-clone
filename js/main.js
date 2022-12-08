@@ -23,7 +23,7 @@ function signUpSubmit(){
                 timeStamp: timeStamp,
                 userId: userId
             }).then(() => {
-                window.location.href = "home.html"
+                window.location.href = "html/home.html"
             })
 
         }).catch((error) => {
@@ -46,10 +46,8 @@ function loginSubmit(){
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userInfo) => {
             //Logged In
+            window.location.href = "html/home.html";
 
-            console.log("user logged in");
-
-            window.location.href = "home.html";
         })
         .catch((error) => {
             console.log(error.message);
@@ -58,8 +56,24 @@ function loginSubmit(){
             document.getElementById("alertLogin").style.display = "block";
             document.getElementById("alertLogin").innerText = error.message;
         });
+}
 
-    console.log(email + " " + password);
+// function to reset user email password through modal
+function resetPassword(){
+    var email = document.getElementById("resetPassEmail").value;
+
+    firebase.auth().sendPasswordResetEmail(email)
+        .then(() => {
+            document.getElementById("alertSuccessResetPass").style.display = "block";
+            document.getElementById("alertDangerResetPass").style.display = "none";
+            document.getElementById("alertSuccessResetPass").innerText = "The Reset Link has been sent to your email.(Check both Inbox and spam folders)";
+        })
+        .catch((error) => {
+            var errorMessage = error.message;
+            document.getElementById("alertDangerResetPass").style.display = "block";
+            document.getElementById("alertSuccessResetPass").style.display = "none";
+            document.getElementById("alertDangerResetPass").innerText = errorMessage;
+        });
 }
 
 //functions to change the trendsMoreBtn on hover of its parent div
