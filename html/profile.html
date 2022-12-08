@@ -19,8 +19,150 @@
     <script src="https://use.fontawesome.com/e48f2a1172.js"></script>
 </head>
 <body>
-    <h1 id="profileName"></h1>
-    <p id="profileEmail"></p>
+
+    <!-- Twitter desktop home page -->
+    <section class="explore">
+
+        <!-- Left navigation menu -->
+        <div class="menuLeft">
+            <div class="twitterIcon">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="twitter-icon-image"  />
+            </div>
+
+            <a href="home.html" class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png" alt="home-icon-image"/>
+                <p>Home</p>
+            </a>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/128/4510/4510810.png" alt="hashtag-icon-image"/>
+                <p>Explore</p>
+            </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/3114/3114800.png" alt="notifications-icon-image" />
+                <p>Notifications</p>
+            </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/542/542638.png" alt="messages-icon-image" />
+                <p>Messages</p>
+            </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25667.png" alt="bookmarks-icon-image" />
+                <p>Bookmarks</p>
+            </div>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/839/839860.png" alt="lists-icon-image" />
+                <p>Lists</p>
+            </div>
+
+            <a href="profile.html" class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/709/709579.png" alt="profile-icon-image" />
+                <p>Profile</p>
+            </a>
+
+            <div class="menuLeftBtn">
+                <img src="https://cdn-icons-png.flaticon.com/512/570/570223.png" alt="more-icon-image" />
+                <p>More</p>
+            </div>
+
+        </div>
+
+        <!-- Central Profile Page Section -->
+        <div class="feed">
+            
+            <!-- Twitter profile content section -->
+            <div class="feedContent">
+
+                <h1>TWITTER PROFILE PAGE</h1>
+
+                <h3 id="profileName"></h3>
+                <p id="profileEmail"></p>
+            </div>
+        </div>
+
+        <!-- Right Sign up menu section with terms of service -->
+        <div class="menuRight">
+            <!-- menuRight searchBar -->
+            <div class="searchBar">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search-icon-image" height="30px" width="30px" /> -->
+                <span class="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
+
+                <input id="searchInput" placeholder="Search Twitter" type="text" />
+            </div>
+
+            <div class="trends">
+                <h3 class="trendsTitle">Trends for you</h3>
+
+                <!-- trending topic row -->
+                <div class="trendsRow">
+                    <div class="trendsRowLeft">
+                        <p class="trendsLightText">Trending in Kenya</p>
+                        <p class="trendsDarkText">Lovely</p>
+                        <p class="trendsLightText">229K Tweets</p>
+                    </div>
+                    
+                    <div onmouseover=moreBtnBlue(1) onmouseout=moreBtnGrey(1) class="trendsMoreBtn" >
+                        <img id="moreImage1" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+                    </div>
+                </div>
+
+                <!-- trending topic row -->
+                <div class="trendsRow">
+                    <div class="trendsRowLeft">
+                        <p class="trendsLightText">Trending in Kenya</p>
+                        <p class="trendsDarkText">Telegram</p>
+                        <p class="trendsLightText">472K Tweets</p>
+                    </div>
+
+                    <div onmouseover=moreBtnBlue(2) onmouseout=moreBtnGrey(2)  class="trendsMoreBtn">
+                        <img id="moreImage2" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+                    </div>
+                </div>
+
+                <!-- trending topic row -->
+                <div class="trendsRow">
+                    <div class="trendsRowLeft">
+                        <p class="trendsLightText">Trending in Kenya</p>
+                        <p class="trendsDarkText">Freedom</p>
+                        <p class="trendsLightText">384K Tweets</p>
+                    </div>
+
+                    <div onmouseover=moreBtnBlue(3) onmouseout=moreBtnGrey(3) class="trendsMoreBtn">
+                        <img id="moreImage3" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+                    </div>
+                </div>
+
+                <!-- Show more row -->
+                <div class="trendsRow showTrendsRow">
+                    <p>
+                        Show more
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Terms of service links and copyright text sub-section (below signup container) -->
+            <div class="termsOfService">
+                <ul class="tosLinks">
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Ads info</a></li>
+                    <li class="tosLinksMore">
+                        More
+                        <img class="tosLinksMoreIcon" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+                    </li>
+                </ul>
+                <p>&copy; 2022 Twitter, Inc.</p>
+            </div>
+        </div>
+
+    </section>
     
 
     <!-- Firebase -->
