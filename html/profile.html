@@ -25,9 +25,9 @@
 
         <!-- Left navigation menu -->
         <div class="menuLeft">
-            <div class="twitterIcon">
+            <a href="home.html" class="twitterIcon">
                 <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="twitter-icon-image"  />
-            </div>
+            </a>
 
             <a href="home.html" class="menuLeftBtn">
                 <img src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png" alt="home-icon-image"/>
@@ -69,7 +69,22 @@
                 <p>More</p>
             </div>
 
-            
+            <div id="menuLeftTweetBtn" data-bs-toggle="modal" data-bs-target="#tweetModal">Tweet</div>
+
+            <div class="menuLeftBtn menuLeftProfileBtn">
+                <div class="menuLeftBtnLeft">
+                    <img class="menuLeftProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />
+
+                    <div class="menuLeftProfileText">
+                        <p id="menuLeftProfileName"></p>
+                        <p id="menuLeftProfileHandle"></p>
+                    </div>
+                </div>
+
+                <img class="menuLeftProfileMoreIcon" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" />
+            </div>
+
+
 
         </div>
 
@@ -165,6 +180,28 @@
         </div>
 
     </section>
+
+    <!-- Modal to input and post a tweet -->
+    <div class="modal fade" id="tweetModal" tabindex="-1" aria-labelledby="tweetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" height="40px" />
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- tweet text area -->
+                    <div class="form-floating my-2 w-100">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="tweetTextarea" style="height: 120px"></textarea>
+                        <label for="tweetTextarea">Write Tweet Here</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick=tweetBtnOnclick() type="button" class="btn btn-primary">Tweet</button>
+                </div>
+            </div>
+        </div>
+    </div>    
     
 
     <!-- Firebase -->

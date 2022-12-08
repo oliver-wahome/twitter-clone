@@ -52,7 +52,7 @@
 /* end twitterIcon */
 
 .menuLeftBtn {
-    margin: 0;
+    margin: 1px 0;
     padding: 12px;
     display: flex;
     align-items: flex-end;
@@ -103,6 +103,53 @@
 #menuLeftTweetBtn:hover {
     background-color: #1a8cd8;
 }
+
+.menuLeftProfileBtn {
+    padding: 12px 0;
+    position: absolute;
+    width: 90%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    border-radius: 60px;
+}
+/* start menuLeftProfileBtn */
+.menuLeftBtnLeft {
+    display: flex;
+    align-items: center;
+}
+
+.menuLeftProfileText {
+    margin: 0 10px 0;
+}
+
+.menuLeftProfileBtn p{
+    font-size: 15px;
+    margin: 0;
+}
+
+#menuLeftProfileName{
+    color: #0f1419;
+    font-weight: 700;
+}
+
+#menuLeftProfileHandle {
+    color: #536471;
+}
+
+.menuLeftProfileBtn .menuLeftProfilePic {
+    margin: 0 0 0 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.menuLeftProfileBtn .menuLeftProfileMoreIcon{
+    height: 15px;
+    width: 15px;
+}
+/* end menuLeftProfileBtn */
 
 /* end of elements in menuLeft */
 

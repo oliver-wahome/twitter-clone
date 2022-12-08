@@ -14,7 +14,27 @@ firebase.auth().onAuthStateChanged((user) => {
             //print firestore user data to their profile page
             document.getElementById("profileName").innerText = firstName +" "+ lastName;
             document.getElementById("profileEmail").innerText = email;
+            document.getElementById("menuLeftProfileName").innerText = firstName + " " + lastName;
+            document.getElementById("menuLeftProfileHandle").innerText = "@"+firstName+lastName;
         })
+
+        //send a tweet to firestore user collection
+        function tweetBtnOnclick() {
+            var tweet = document.getElementById("tweetTextarea").value;
+            var timeStamp = new Date();
+
+            //separating the firestore set function allows us to get the document id
+            var sendTweet = firebase.firestore().collection("tweets").doc();
+            sendTweet.set({
+                tweetText:tweet,
+                userId: userId,
+                timeStamp: timeStamp,
+                tweetId: sendTweet.id
+
+            }).then(() => {
+                window.location.reload();
+            })
+        }
 
     }
     else {

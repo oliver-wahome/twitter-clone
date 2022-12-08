@@ -4,7 +4,17 @@ firebase.auth().onAuthStateChanged((user) => {
         //if user is logged in
         //getting the user's id
         var userId = user.uid;
-        console.log(userId);
+
+        firebase.firestore().collection("users").doc(userId).get()
+            .then((doc) =>{
+                var firstName = doc.data().firstName;
+                var lastName = doc.data().lastName;
+                var email = doc.data().email;
+
+                //print firestore user data to their profile page
+                document.getElementById("menuLeftProfileName").innerText = firstName +" "+ lastName;
+                document.getElementById("menuLeftProfileHandle").innerText = "@"+firstName+lastName;
+            })
 
         //logout user onclick of logout btn
         document.getElementById("logout").onclick = function() {
@@ -12,7 +22,7 @@ firebase.auth().onAuthStateChanged((user) => {
         }
 
         //send a tweet to firestore user collection
-        document.getElementById("tweetBtn").onclick = function() {
+        function tweetBtnOnclick() {
             var tweet = document.getElementById("tweetTextarea").value;
             var timeStamp = new Date();
 
