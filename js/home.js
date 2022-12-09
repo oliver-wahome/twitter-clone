@@ -5,6 +5,7 @@ firebase.auth().onAuthStateChanged((user) => {
         //getting the user's id
         var userId = user.uid;
 
+        //getting user data from firestore and printing to DOM
         firebase.firestore().collection("users").doc(userId).get()
             .then((doc) =>{
                 var firstName = doc.data().firstName;
@@ -19,6 +20,16 @@ firebase.auth().onAuthStateChanged((user) => {
         //logout user onclick of logout btn
         document.getElementById("logout").onclick = function() {
             firebase.auth().signOut();
+        }
+
+        //functions to change the tweet moreBtn on hover of its parent div
+        //function to change the tweet more btn to blue on hover
+        function moreBtnBlue(num) {
+            document.getElementById("moreImage"+num).src = "images/moreBlue.png";
+        }
+        //function to return trendsMoreBtn back to grey onmouseout
+        function moreBtnGrey(num){
+            document.getElementById("moreImage"+num).src = "https://cdn-icons-png.flaticon.com/128/512/512142.png";
         }
 
         //send a tweet to firestore user collection
@@ -38,6 +49,19 @@ firebase.auth().onAuthStateChanged((user) => {
                 window.location.reload();
             })
         }
+
+        //using jquery to output html to the DOM
+        firebase.firestore().collection("tweets").get()
+            .then((querySnapShot) => {
+                var content = "";
+
+                querySnapShot.forEach((doc) => {
+                    var tweetText = doc.data().tweetText;
+
+                    console.log(tweetText);
+                })
+
+            })
 
     }else {
         //else if user is not logged in

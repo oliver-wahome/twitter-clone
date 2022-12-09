@@ -17,6 +17,9 @@
 
     <!-- Linking fontawesome -->
     <script src="https://use.fontawesome.com/e48f2a1172.js"></script>
+
+    <!-- Importing jquery script -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -105,6 +108,49 @@
                 <button id="tweetBtn" onclick=tweetBtnOnclick() class="btn btn-primary">Tweet</button> 
 
                 <hr />
+
+                <div id="tweetsList">
+                    <div class="tweet">
+                        <img class="tweetProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />
+
+                        <div class="tweetContent">
+                            <div class="tweetContentTopRow">
+                                <div class="profileNames">
+                                    <p id="username">username</p>
+                                    <p id="userHandle">userhandle</p>
+                                    <div class="topRowDot"></div>
+                                    <p id="tweetTime">10h</p>
+                                </div>
+
+                                <img id="tweetMoreBtn" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" height="15px" />
+                            </div>
+
+                            <p id="tweetText">Tweet Text</p>
+
+                            <div class="tweetIcons">
+                                <div class="tweetIcon">
+                                    <span class="icon commentIcon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+                                    <p id="comments">1000</p>
+                                </div>
+
+                                <div class="tweetIcon">
+                                    <span class="icon retweetIcon"><i class="fa fa-retweet" aria-hidden="true"></i></span>
+                                    <p id="retweets">1000</p>
+                                </div>
+
+                                <div class="tweetIcon">
+                                    <span class="icon likeIcon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                                    <p id="likes">1000</p>
+                                </div>
+
+                                <div class="tweetIcon">
+                                    <span class="icon shareIcon"><i class="fa fa-upload" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
 
