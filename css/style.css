@@ -358,7 +358,10 @@
 /* end feedImageContainer */
 
 .trends {
-    border-bottom: 1px solid rgb(0, 0, 0, 0.25);
+    overflow: hidden;
+    background-color: #f7f9f9;
+    border-radius: 15px;
+    /* border-bottom: 1px solid rgb(0, 0, 0, 0.25); */
 }
 
 /* start of elements in trends */
@@ -436,7 +439,7 @@
 .menuRight {
     height: 100vh;
     width: 31%;
-    padding: 10px 20px;
+    padding: 5px 20px;
     position: sticky;
     top: 0;
 }
@@ -488,6 +491,18 @@
 .signUpBtn p {
     margin: 0;
 }
+
+/* start menuRight elements (for profile/home pages) */
+.searchBarMenuRight {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.trendsMenuRight {
+    margin: 10px 0;
+}
+
+/* end menuRight elements (for profile/home pages) */
 
 .appleSignUpBtn, .phoneSignUpBtn {
     font-weight: 700;

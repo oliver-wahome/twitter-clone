@@ -23,7 +23,7 @@ function signUpSubmit(){
                 timeStamp: timeStamp,
                 userId: userId
             }).then(() => {
-                window.location.href = "html/home.html"
+                window.location.href = "home.html"
             })
 
         }).catch((error) => {
@@ -46,7 +46,7 @@ function loginSubmit(){
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userInfo) => {
             //Logged In
-            window.location.href = "html/home.html";
+            window.location.href = "home.html";
 
         })
         .catch((error) => {
