@@ -7,9 +7,10 @@
 
 .explore {
     padding: 0 30px;
-    height: 200vh;
+    height: 300vh;
     width: 100%;
     display: flex;
+    /* background-color: green; */
 }
 
 /* 
@@ -437,11 +438,13 @@
     RIGHT TWITTER MENU
 */
 .menuRight {
-    height: 100vh;
+    height: 150vh;
     width: 31%;
     padding: 5px 20px;
     position: sticky;
     top: 0;
+    border-bottom: 1px solid black;
+    /* background-color: red; */
 }
 
 /* start of elements in menuRight */
