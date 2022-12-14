@@ -18,6 +18,33 @@ firebase.auth().onAuthStateChanged((user) => {
             document.getElementById("menuLeftProfileHandle").innerText = "@"+firstName+lastName;
         })
 
+        //reading the data associated with the logged in user
+        firebase.firestore().collection("users").doc(userId).get().then((doc) =>{
+            var fname = doc.data().firstName;
+            var lname = doc.data().lastName;
+            var bio = doc.data().bio;
+
+            document.getElementById("firstName").value = fname;
+            document.getElementById("lastName").value = lname;
+            document.getElementById("userBio").value = bio;
+        })
+
+        //update user information
+        document.getElementById("saveInfo").onclick = function(){
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var bio = document.getElementById("userBio").value;
+
+            firebase.firestore().collection("users").doc(userId).update({
+                firstName: firstName,
+                lastName: lastName,
+                bio: bio
+            })
+            .then(() => {
+                window.location.reload();
+            })
+        }
+
         //send a tweet to firestore user collection
         function tweetBtnOnclick() {
             var tweet = document.getElementById("tweetTextarea").value;
@@ -35,7 +62,6 @@ firebase.auth().onAuthStateChanged((user) => {
                 window.location.reload();
             })
         }
-
     }
     else {
         window.location.href = "index.html";
