@@ -50,6 +50,45 @@ firebase.auth().onAuthStateChanged((user) => {
             })
         }
 
+        //send a tweet to firestore user collection
+        window.addComment = function(tweetId) {
+            
+
+            console.log(tweetId);
+
+            document.getElementById("replyModalBtn").onclick = function(){
+                var comment = document.getElementById("commentTextarea").value;
+                var timeStamp = new Date();
+
+                var sendComment = firebase.firestore().collection("comments").doc();
+                sendComment.set({
+                    tweetId: tweetId,
+                    comment: comment,
+                    timeStamp: timeStamp,
+                    userId: userId,
+                    commentId: sendComment.id
+                })
+                .then(() => {
+                    window.location.reload();
+                })
+                .catch((error) => {
+                    console.log(error.message);
+                })
+            }
+            //separating the firestore set function allows us to get the document id
+            // var sendComment = firebase.firestore().collection("comments").doc();
+            // sendTweet.set({
+            //     tweetId: tweetId,
+            //     comment:comment,
+            //     timeStamp: timeStamp,
+            //     userId: userId,
+            //     commentId: sendComment.id
+
+            // }).then(() => {
+            //     window.location.reload();
+            // })
+        }
+
         //using jquery to output html to the DOM
         firebase.firestore().collection("tweets").get()
             .then((querySnapShot) => {
@@ -57,8 +96,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
                 querySnapShot.forEach((doc) => {
                     var tweetText = doc.data().tweetText;
-
-                    console.log(tweetText);
+                    var tweetId = doc.id;
 
                     content += '<div class="tweet">';
                         content += '<img class="tweetProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />';
@@ -74,7 +112,7 @@ firebase.auth().onAuthStateChanged((user) => {
                             content += '</div>';
                             content += '<p id="tweetText">'+ tweetText +'</p>';
                             content += '<div class="tweetIcons">';
-                                content += '<div class="tweetIcon">';
+                                content += '<div class="tweetIcon commentIconSection" data-bs-toggle="modal" data-bs-target="#commentModal" onclick=addComment("'+tweetId+'") >';
                                     content += '<span class="icon commentIcon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>';
                                     content += '<p id="comments">1000</p>';
                                 content += '</div>';
