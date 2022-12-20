@@ -169,10 +169,18 @@
 }
 
 .tweet {
+    text-decoration: none;
+    color: black;
     padding: 10px;
     width: 100%;
     display: flex;
 }
+
+.tweet:hover {
+    cursor: default;
+    color: black;
+}
+
 /* start tweet */
 .tweetProfilePic {
     height: 48px;
