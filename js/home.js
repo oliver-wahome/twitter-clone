@@ -53,52 +53,49 @@ firebase.auth().onAuthStateChanged((user) => {
         //send a tweet to firestore user collection
         window.addComment = function(tweetId) {
             //using jquery to output html to the DOM
-            firebase.firestore().collection("tweets").where("tweetId", "==", tweetId).get()
-            .then((querySnapShot) => {
+            //getting specific tweet data and outputting it to comment modal
+            firebase.firestore().collection("tweets").doc(tweetId).get()
+            .then((doc) => {
                 var content = "";
-                console.log("check");
+                var tweetText = doc.data().tweetText;
+                var tweetId = doc.id;
 
-                querySnapShot.forEach((doc) => {
-                    var tweetText = doc.data().tweetText;
-                    var tweetId = doc.id;
-                    console.log(tweetText +" "+tweetId);
-
-                    content += '<div class="tweet">';
-                        content += '<img class="tweetProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />';
-                        content += '<div class="tweetContent">';
-                            content += '<div class="tweetContentTopRow">';
-                                content += '<div class="profileNames">';
-                                    content += '<p id="username">username</p>';
-                                    content += '<p id="userHandle">userhandle</p>';
-                                    content += '<div class="topRowDot"></div>';
-                                    content += '<p id="tweetTime">10h</p>';
-                                content += '</div>';
-                                content += '<img id="tweetMoreBtn" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" height="15px" />';
+                content += '<div class="tweet">';
+                    content += '<img class="tweetProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />';
+                    content += '<div class="tweetContent">';
+                        content += '<div class="tweetContentTopRow">';
+                            content += '<div class="profileNames">';
+                                content += '<p id="username"></p>';
+                                content += '<p id="userHandle">userhandle</p>';
+                                content += '<div class="topRowDot"></div>';
+                                content += '<p id="tweetTime">10h</p>';
                             content += '</div>';
-                            content += '<p id="tweetText">'+ tweetText +'</p>';
-                            content += '<div class="tweetIcons">';
-                                content += '<div class="tweetIcon commentIconSection" data-bs-toggle="modal" data-bs-target="#commentModal" onclick=addComment("'+tweetId+'") >';
-                                    content += '<span class="icon commentIcon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>';
-                                    content += '<p id="comments">1000</p>';
-                                content += '</div>';
-                                content += '<div class="tweetIcon">';
-                                        content += '<span class="icon retweetIcon"><i class="fa fa-retweet" aria-hidden="true"></i></span>';
-                                        content += '<p id="retweets">1000</p>';
-                                content += '</div>';
-                                content += '<div class="tweetIcon">';
-                                    content += '<span class="icon likeIcon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>';
-                                    content += '<p id="likes">1000</p>';
-                                content += '</div>';
-                                content += '<div class="tweetIcon">';
-                                    content += '<span class="icon shareIcon"><i class="fa fa-upload" aria-hidden="true"></i></span>';
-                                content += '</div>';
+                            content += '<img id="tweetMoreBtn" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" height="15px" />';
+                        content += '</div>';
+                        content += '<p id="tweetText">'+ tweetText +'</p>';
+                        content += '<div class="tweetIcons">';
+                            content += '<div class="tweetIcon commentIconSection" data-bs-toggle="modal" data-bs-target="#commentModal" onclick=addComment("'+tweetId+'") >';
+                                content += '<span class="icon commentIcon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>';
+                                content += '<p id="comments">1000</p>';
+                            content += '</div>';
+                            content += '<div class="tweetIcon">';
+                                    content += '<span class="icon retweetIcon"><i class="fa fa-retweet" aria-hidden="true"></i></span>';
+                                    content += '<p id="retweets">1000</p>';
+                            content += '</div>';
+                            content += '<div class="tweetIcon">';
+                                content += '<span class="icon likeIcon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>';
+                                content += '<p id="likes">1000</p>';
+                            content += '</div>';
+                            content += '<div class="tweetIcon">';
+                                content += '<span class="icon shareIcon"><i class="fa fa-upload" aria-hidden="true"></i></span>';
                             content += '</div>';
                         content += '</div>';
                     content += '</div>';
-                })
-                $("#commentModalTweet").append(content);
+                content += '</div>';
 
-            })
+                $("#commentModalTweet").replaceWith(content);
+
+            });
 
             console.log(tweetId);
 
@@ -124,6 +121,10 @@ firebase.auth().onAuthStateChanged((user) => {
             }
         }
 
+        function openTweet(urlString){
+            window.location.href = urlString;
+        }
+
         //using jquery to output html to the DOM
         firebase.firestore().collection("tweets").get()
         .then((querySnapShot) => {
@@ -134,7 +135,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 var tweetId = doc.id;
                 var link = "tweet.html" + "?" + tweetId;
 
-                content += '<a href="'+link+'" class="tweet">';
+                content += '<div onclick=openTweet("'+link+'") class="tweet">';
                     content += '<img class="tweetProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />';
                     content += '<div class="tweetContent">';
                         content += '<div class="tweetContentTopRow">';
@@ -165,7 +166,7 @@ firebase.auth().onAuthStateChanged((user) => {
                             content += '</div>';
                         content += '</div>';
                     content += '</div>';
-                content += '</a>';
+                content += '</div>';
             })
             $("#tweetsList").append(content);
 
