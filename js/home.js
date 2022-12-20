@@ -22,16 +22,6 @@ firebase.auth().onAuthStateChanged((user) => {
             firebase.auth().signOut();
         }
 
-        //functions to change the tweet moreBtn on hover of its parent div
-        //function to change the tweet more btn to blue on hover
-        function moreBtnBlue(num) {
-            document.getElementById("moreImage"+num).src = "images/moreBlue.png";
-        }
-        //function to return trendsMoreBtn back to grey onmouseout
-        function moreBtnGrey(num){
-            document.getElementById("moreImage"+num).src = "https://cdn-icons-png.flaticon.com/128/512/512142.png";
-        }
-
         //send a tweet to firestore user collection
         document.getElementById("tweetBtn").onclick = function() {
             var tweet = document.getElementById("tweetTextarea").value;
@@ -93,6 +83,7 @@ firebase.auth().onAuthStateChanged((user) => {
                     content += '</div>';
                 content += '</div>';
 
+                //using replaceWith() so that previously appended tweets don't remain in the modal
                 $("#commentModalTweet").replaceWith(content);
 
             });
@@ -121,14 +112,11 @@ firebase.auth().onAuthStateChanged((user) => {
             }
         }
 
-        function openTweet(urlString){
-            window.location.href = urlString;
-        }
-
         //using jquery to output html to the DOM
         firebase.firestore().collection("tweets").get()
         .then((querySnapShot) => {
             var content = "";
+            var counter = 1;
 
             querySnapShot.forEach((doc) => {
                 var tweetText = doc.data().tweetText;
@@ -145,7 +133,9 @@ firebase.auth().onAuthStateChanged((user) => {
                                 content += '<div class="topRowDot"></div>';
                                 content += '<p id="tweetTime">10h</p>';
                             content += '</div>';
-                            content += '<img id="tweetMoreBtn" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" height="15px" />';
+                            content += '<div onmouseover="moreBtnBlue(\'tweetMoreImage'+counter+'\')" onmouseout="moreBtnGrey(\'tweetMoreImage'+counter+'\')" class="tweetMoreBtn">';
+                                content += '<img id="tweetMoreImage'+counter+'" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" height="15px" />';
+                            content += '</div>';
                         content += '</div>';
                         content += '<p id="tweetText">'+ tweetText +'</p>';
                         content += '<div class="tweetIcons">';
@@ -167,6 +157,8 @@ firebase.auth().onAuthStateChanged((user) => {
                         content += '</div>';
                     content += '</div>';
                 content += '</div>';
+
+                counter += 1;
             })
             $("#tweetsList").append(content);
 
@@ -177,3 +169,20 @@ firebase.auth().onAuthStateChanged((user) => {
         window.location.href = "index.html";
     }
 });
+
+//functions to change the tweet moreBtn on hover of its parent div
+//function to change the tweet more btn to blue on hover
+function moreBtnBlue(elementId) {
+    document.getElementById(elementId).src = "../images/moreBlue.png";
+}
+//function to return trendsMoreBtn back to grey onmouseout
+function moreBtnGrey(elementId){
+    document.getElementById(elementId).src = "https://cdn-icons-png.flaticon.com/128/512/512142.png";
+}
+
+//function to redirect user to tweet page after clicking a tweet
+function openTweet(urlString){
+    console.log(urlString);
+
+    window.location.href = urlString;
+}
