@@ -1,0 +1,69 @@
+.chat {
+    padding: 0 30px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+/* central Message menu */
+.messageMenu {
+    height: 100vh;
+    width: 32%;
+    border: 1px solid black;
+}
+
+/* start of elements in messageMenu */
+.messageMenuTop {
+    padding: 0 15px;
+}
+
+.messagesHeader {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.messageMenuNavbar {
+    padding: 0 15px;
+}
+
+.dmSearchBar{
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 100%;
+    outline: none;
+    text-align: center;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+/* end of elements in messageMenu */
+/* end of central Message menu */
+
+
+/* direct message section */
+.directMessage {
+    height: 100vh;
+    width: 46%;
+    border: 1px solid black;
+}
+
+/* start of elements in directMessage */
+.messageInputSection {
+    position: absolute;
+    bottom: 0;
+    padding: 15px 0;
+    width: 44%;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid black;
+}
+
+#messageInput {
+    width: 60%;
+    padding: 8px 20px;
+    outline: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+/* end of elements in directMessage */
+/* end of dm section */
