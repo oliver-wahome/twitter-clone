@@ -47,6 +47,19 @@
 }
 
 /* start of elements in directMessage */
+.recipientDetailsContainer {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.recipientUsername {
+    margin: 0 10px;
+    font-weight: 700;
+    color: #0f1419;
+}
+
 .messageInputSection {
     position: absolute;
     bottom: 0;

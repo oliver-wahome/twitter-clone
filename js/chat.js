@@ -22,8 +22,10 @@ firebase.auth().onAuthStateChanged((user) => {
                 allUsers.forEach((doc) => {
                     var username = doc.data().firstName + " " + doc.data().lastName;
                     var handle = "@" + doc.data().firstName + doc.data().lastName;
+                    var link = "chat.html" + "?" + doc.data().userId;
 
-                    content += '<div class="tweet">';
+
+                    content += '<a href="'+link+'" class="tweet">';
                         content += '<img class="tweetProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />';
                         content += '<div class="tweetContent">';
                             content += '<div class="tweetContentTopRow">';
@@ -35,11 +37,51 @@ firebase.auth().onAuthStateChanged((user) => {
                                 content += '</div>';
                             content += '</div>';
                         content += '</div>';
-                    content += '</div>';
+                    content += '</a>';
                 });
                 $("#userDirectMessages").append(content);
                 
+            });
+
+        //getting the userId from the url to know which dms to show user
+        var recipientId = decodeURIComponent(window.location.search).substring(1);
+
+        //outputting the recipient details on the top of the user's direct message section
+        firebase.firestore().collection("users").doc(recipientId).get()
+            .then((doc) => {
+                var username = doc.data().firstName + " " + doc.data().lastName;
+                var content = '';
+
+                content = '<div class="recipientDetailsContainer">';
+                    content += '<img class="tweetProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />';
+                    content += '<p class="recipientUsername" >'+username+'</p>';
+                content += '</div>';
+
+                $("#recipientDetails").replaceWith(content);
+                
+            });
+
+        //sending messages to firestore onclick of the send button
+        document.getElementById("sendDmBtn").onclick = function() {
+            //getting the message from the message inputfield
+            var message = document.getElementById("messageInput").value;
+            var timestamp = new Date();
+
+            //creating a document variable
+            var messageDoc = firebase.firestore().collection("messages").doc();
+
+            //adding a firestore collection to store the user messages
+            messageDoc.set({
+                message: message,
+                timestamp: timestamp,
+                senderId: userId,
+                recipientId: recipientId,
+                messageId: messageDoc.id
             })
+            .then(() => {
+                window.location.reload();
+            })
+        }
     }
     else {
         console.log("user is not logged in");
