@@ -52,7 +52,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 var username = doc.data().firstName + " " + doc.data().lastName;
                 var content = '';
 
-                content = '<div class="recipientDetailsContainer">';
+                content = '<div id="recipientDetails" class="recipientDetailsContainer">';
                     content += '<img class="tweetProfilePic" src="https://cdn-icons-png.flaticon.com/512/236/236831.png" alt="profile-picture-icon-image" />';
                     content += '<p class="recipientUsername" >'+username+'</p>';
                 content += '</div>';
