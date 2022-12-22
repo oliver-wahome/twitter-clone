@@ -60,6 +60,59 @@
     color: #0f1419;
 }
 
+.messageContainer {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* start of elements in messageContainer */
+
+.senderMessageContainer {
+    align-items: flex-end;
+}
+
+.recipientMessageContainer {
+    align-items: flex-start;
+}
+
+.message {
+    width: fit-content;
+    font-size: 15px;
+    margin: 0;
+    padding: 12px 16px;
+    border-radius: 20px;
+}
+
+.senderMessage {
+    color: white;
+    background-color: #1a8cd8;
+    border-bottom-right-radius: 0;
+}
+
+.recipientMessage {
+    color: #0f1419;
+    background-color: #eff3f4;
+    border-bottom-left-radius: 0;
+}
+
+.messageTimeSent {
+    margin: 5px;
+    font-size: 13px;
+    color: #536471;
+}
+
+.senderMessageTimeSent {
+    float: right;
+}
+
+.recipientMessageTimeSent {
+    float: left;
+}
+
+/* end of elements in messageContainer */
+
 .messageInputSection {
     position: absolute;
     bottom: 0;

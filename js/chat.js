@@ -80,8 +80,50 @@ firebase.auth().onAuthStateChanged((user) => {
             })
             .then(() => {
                 window.location.reload();
-            })
+            });
         }
+
+        //getting all the messages between the user and recipient
+        firebase.firestore().collection("messages").get()
+            .then((allMessages) => {
+                var content = '';
+
+                //looping through all message documents in messages collections
+                allMessages.forEach((doc) => {
+                    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                    var sender_id = doc.data().senderId;
+                    var recipient_id = doc.data().recipientId;
+                    var message = doc.data().message;
+                    var msgdate = doc.data().timestamp.toDate();
+                    var minutes = msgdate.getMinutes();
+
+                    //to add the '0' to minutes < ten
+                    if(minutes < 10){
+                        minutes = "0"+minutes;
+                    }
+                    
+                    var timeSent = months[msgdate.getMonth()] + " " + msgdate.getDate() + ", " + msgdate.getFullYear() + " " + msgdate.getHours() + ":" + minutes;
+
+                    //if logged in user sent the message and that message was meant for recipient
+                    if(userId == sender_id && recipientId == recipient_id){
+                        content += '<div class="messageContainer senderMessageContainer">';
+                            content += '<p class="message senderMessage">'+message+'</p>';
+                            content += '<p class="messageTimeSent senderMessageTimeSent">'+timeSent+'</p>';
+                        content += '</div>';
+                    }
+
+                    //if message was received by logged in user and that it was sent to them
+                    if(userId == recipient_id && recipientId == sender_id){
+                        content += '<div class="messageContainer recipientMessageContainer">';
+                            content += '<p class="message recipientMessage">'+message+'</p>';
+                            content += '<p class="messageTimeSent recipientMessageTimeSent">'+timeSent+'</p>';
+                        content += '</div>';
+                    }
+                    
+                });
+
+                $("#messages").append(content);
+            })
     }
     else {
         console.log("user is not logged in");
