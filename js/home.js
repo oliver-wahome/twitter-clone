@@ -10,7 +10,6 @@ firebase.auth().onAuthStateChanged((user) => {
             .then((doc) =>{
                 var firstName = doc.data().firstName;
                 var lastName = doc.data().lastName;
-                var email = doc.data().email;
 
                 //print firestore user data to their profile page
                 document.getElementById("menuLeftProfileName").innerText = firstName +" "+ lastName;

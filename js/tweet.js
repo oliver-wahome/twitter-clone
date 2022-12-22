@@ -2,10 +2,22 @@
 firebase.auth().onAuthStateChanged((user) => {
     if(user){
         //if user is logged in
+        var userId = user.uid;
 
         //getting tweetId from the url
         var urlString = decodeURIComponent(window.location.search);
         var tweetId = urlString.substring(1);
+
+        //getting user data from firestore and printing to DOM
+        firebase.firestore().collection("users").doc(userId).get()
+            .then((doc) =>{
+                var firstName = doc.data().firstName;
+                var lastName = doc.data().lastName;
+
+                //print firestore user data to their profile page
+                document.getElementById("menuLeftProfileName").innerText = firstName +" "+ lastName;
+                document.getElementById("menuLeftProfileHandle").innerText = "@"+firstName+lastName;
+            });
 
         //posting the tweet to the tweet page
         firebase.firestore().collection("tweets").doc(tweetId).get()
