@@ -66,4 +66,14 @@ firebase.auth().onAuthStateChanged((user) => {
     else {
         window.location.href = "index.html";
     }
-})
+});
+
+//functions to change the tweet moreBtn on hover of its parent div
+//function to change the tweet more btn to blue on hover
+function moreBtnBlue(elementId) {
+    document.getElementById(elementId).src = "../images/moreBlue.png";
+}
+//function to return trendsMoreBtn back to grey onmouseout
+function moreBtnGrey(elementId){
+    document.getElementById(elementId).src = "https://cdn-icons-png.flaticon.com/128/512/512142.png";
+}
