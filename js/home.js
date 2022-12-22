@@ -60,26 +60,8 @@ firebase.auth().onAuthStateChanged((user) => {
                                 content += '<div class="topRowDot"></div>';
                                 content += '<p id="tweetTime">10h</p>';
                             content += '</div>';
-                            content += '<img id="tweetMoreBtn" src="https://cdn-icons-png.flaticon.com/128/512/512142.png" alt="more-icon-image" height="15px" />';
                         content += '</div>';
                         content += '<p id="tweetText">'+ tweetText +'</p>';
-                        content += '<div class="tweetIcons">';
-                            content += '<div class="tweetIcon commentIconSection" data-bs-toggle="modal" data-bs-target="#commentModal" onclick=addComment("'+tweetId+'") >';
-                                content += '<span class="icon commentIcon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>';
-                                content += '<p id="comments">1000</p>';
-                            content += '</div>';
-                            content += '<div class="tweetIcon">';
-                                    content += '<span class="icon retweetIcon"><i class="fa fa-retweet" aria-hidden="true"></i></span>';
-                                    content += '<p id="retweets">1000</p>';
-                            content += '</div>';
-                            content += '<div class="tweetIcon">';
-                                content += '<span class="icon likeIcon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>';
-                                content += '<p id="likes">1000</p>';
-                            content += '</div>';
-                            content += '<div class="tweetIcon">';
-                                content += '<span class="icon shareIcon"><i class="fa fa-upload" aria-hidden="true"></i></span>';
-                            content += '</div>';
-                        content += '</div>';
                     content += '</div>';
                 content += '</div>';
 

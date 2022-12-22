@@ -233,6 +233,7 @@
 }
 
 .topRowDot {
+    margin: 0 5px;
     padding: 1px;
     background-color: #536471;
 }
